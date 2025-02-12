@@ -1,5 +1,5 @@
 ---
-title: "DdGE_HW03"
+title: "DdGE_HW04"
 author: "Thomas M. Rudolf"
 format: pdf
 editor: visual
@@ -34,7 +34,5 @@ The following results were obtained yet:
 Mean Absolute Error: 17821.348
 
 Mean Absolute Percentage Error: 0.1
-
-Print errors and results for reduced analysis Mean Absolute Error: 19149.494679060663 Mean Absolute Percentage Error: 0.10865585757261532
 
 *What findings are going to influence your decisions to turn this into a data product that is usable?*
