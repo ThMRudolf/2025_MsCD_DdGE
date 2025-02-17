@@ -201,6 +201,7 @@ def select_numerical(df):
     return numerical_df
 
 def select_categorical(df):
+
     """
     Selects only categorical columns from the DataFrame.
 
@@ -212,3 +213,28 @@ def select_categorical(df):
     """
     categorical_df = df.select_dtypes(include=['object'])
     return categorical_df
+
+def save_prep_data_2_prep(df, name):
+    """
+    Takes a DataFrame and tne name. The df is separeted in 
+    x and y data and numercial and categorical values.
+
+    Params:
+        df: DataFrame from which categorical columns are to be selected.
+        name: 'train' or 'test'
+
+    Returns:
+        no return values. Saves the DataFrame for train, test and the 
+        numerical and categorical information to ../data/prep
+    """
+    x_df, y_df, numerical_cols, categorical_cols = prepare_train_data(df)
+    print(numerical_cols)
+    x_df.to_csv(f'../data/prep/x_{name}.csv', index=False)
+    y_df.to_csv('../data/prep/y_train.csv', index=False)
+    # Save numerical columns to a file
+    with open(f'../data/prep/numerical_cols_{name}n.txt', 'w') as f:
+        for col in numerical_cols:
+            f.write(f"{col}\n")
+    with open(f'../data/prep/categorical_cols_{name}.txt', 'w') as f:
+        for col in categorical_cols:
+            f.write(f"{col}\n")
