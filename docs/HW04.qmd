@@ -1,11 +1,13 @@
 ---
-title: "DdGE_HW04"
+title: "Arquitectura de productos de datos (Datos de gran escala) -HW04"
 author: "Thomas M. Rudolf"
 format: pdf
 editor: visual
 ---
 
 # 1. Review the following blog on proofs of concept.
+
+<https://aws.amazon.com/blogs/enterprise-strategy/generative-ai-getting-proofs-of-concept-to-production/>
 
 ## Aim:
 
@@ -25,9 +27,11 @@ Understand what a POC is. POC stands for **P**roof-**o**f-**C**oncept
 
 *How is the POC related to the prototype of the house or sales problem that you carried out in task 02?*
 
-The implemented prototype can give information about the feasibility. Certain risk about false estimation can be obtained considering errors, mean values and especially standard deviation can be used to analyse the quality. But there is no compatibility check done regarding the business framework, e.g..
+**Answer**: The implemented prototype can give information about the feasibility. Certain risk about false estimation can be obtained considering errors, mean values and especially standard deviation can be used to analyse the quality. But there is no compatibility check done regarding the business framework, e.g..
 
 *What results were you able to obtain from building the prototype on the notebook?*
+
+**Answer**:
 
 The following results were obtained yet:
 
@@ -35,4 +39,8 @@ Mean Absolute Error: 17821.348
 
 Mean Absolute Percentage Error: 0.1
 
+Standard deviation is missing and needs to be analysed.
+
 *What findings are going to influence your decisions to turn this into a data product that is usable?*
+
+**Answer**: Currently I am not taking into account the categorical values. I would prefer to include these parameters and calculate the standard deviation as well. Once included this and a positive result, I would start to define a data product.
