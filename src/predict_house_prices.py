@@ -126,7 +126,7 @@ def split_train_data_for_estimate_house_pricing(x, y):
 
 def fit_house_pricing_models(pipeline,
                              x_train,
-                             y_train,
+                             y_train
                              ):
     """
     fits the house price depending on different inputs.
@@ -139,7 +139,7 @@ def fit_house_pricing_models(pipeline,
     Returns:
         Returns a fitted model (pipeline) to estimated price, 
     """
-    pipeline.fit(pipeline, x_train, y_train)
+    pipeline.fit(x_train, y_train)
     return pipeline
 
 def validate_house_pricing_model(pipeline,
