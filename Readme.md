@@ -1,11 +1,5 @@
----
-title: "Forcast of house prizing"
-format: html
-author: Thomas M. Rudolf
-editor: 
-  markdown: 
-    wrap: 72
----
+# "Forcast of house prizing"
+## author: Thomas M. Rudolf
 
 The product is not ready not. I could not import the module
 **predict_house_prices.py** with the mayority of functions.
