@@ -82,7 +82,7 @@ def build_model_estimate_house_pricing(numerical_cols, categorical_cols):
                               ])
     return pipeline
 
-def predict_and_evaluate_estimation_house_pricing(pipeline, x_valid, y_valid):
+def validate_estimation_house_pricing(pipeline, x_valid, y_valid):
     """
     Makes predictions and evaluates the model.
 
