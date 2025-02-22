@@ -17,7 +17,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # Load the datasets
-def read_raw_data(location_str, plot_info=False):
+def read_data(location_str, plot_info=False):
     """
     This fcn read a csv file: it can read test data, train data.
     Parameters:
@@ -29,9 +29,11 @@ def read_raw_data(location_str, plot_info=False):
             data frame with data (e.g. train or test) 
     """
     df = pd.read_csv(location_str)
-    df=df.drop('Id', axis= 1)
-    print(f'Full dataset shape is {format(df.shape)}')
+    if 'Id' in df.columns:
+        df = df.drop('Id', axis=1)
     if plot_info:
+        print(location_str)
+        print(f'Full dataset shape is {format(df.shape)}')
         df.info()
     return df
 
@@ -123,13 +125,15 @@ def save_prep_data_2_prep(df, name):
         no return values. Saves the DataFrame for train, test and the 
         numerical and categorical information to ../data/prep
     """
-    x_df, y_df, numerical_cols, categorical_cols = prepare_train_data(df)
-    x_df.to_csv(f'../data/prep/x_{name}.csv', index=False)
-    y_df.to_csv(f'../data/prep/y_{name}.csv', index=False)
+    #x_df, y_df, numerical_cols, categorical_cols = prepare_train_data(df)
+    df.to_csv(f'data/prep/{name}.csv', index=False)
+
+def save_col_name(numerical_cols, categorical_cols, name):   
     # Save numerical columns to a file
-    with open(f'../data/prep/numerical_cols_{name}n.txt', encoding="ascii") as f:
+    with open(f'data/prep/numerical_cols_{name}.txt', 'w', encoding="ascii") as f:
         for col in numerical_cols:
             f.write(f"{col}\n")
-    with open(f'../data/prep/categorical_cols_{name}.txt', encoding="ascii") as f:
+    with open(f'data/prep/categorical_cols_{name}.txt', 'w', encoding="ascii") as f:
         for col in categorical_cols:
             f.write(f"{col}\n")
+
